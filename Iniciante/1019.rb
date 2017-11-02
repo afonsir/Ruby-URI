@@ -7,3 +7,4 @@ minutos = tempo / 60
 tempo %= 60
 
 puts "#{horas}:#{minutos}:#{tempo}"
+
