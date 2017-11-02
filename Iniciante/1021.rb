@@ -50,3 +50,4 @@ puts "#{m_25.to_i} moeda(s) de R$ 0.25"
 puts "#{m_10.to_i} moeda(s) de R$ 0.10"
 puts "#{m_5.to_i} moeda(s) de R$ 0.05"
 puts "#{resto.to_i} moeda(s) de R$ 0.01"
+
