@@ -1,39 +1,41 @@
 resto = gets.strip.to_f
 
-n_100 = resto / 100
-resto %= 100.0
+resto *= 1000
 
-n_50 = resto / 50
-resto %= 50.0
+n_100 = resto / 100000
+resto %= 100000
 
-n_20 = resto / 20
-resto %= 20.0
+n_50 = resto / 50000
+resto %= 50000
 
-n_10 = resto / 10
-resto %= 10.0
+n_20 = resto / 20000
+resto %= 20000
 
-n_5 = resto / 5
-resto %= 5.0
+n_10 = resto / 10000
+resto %= 10000
 
-n_2 = resto / 2
-resto %= 2.0
+n_5 = resto / 5000
+resto %= 5000
 
-n_1 = resto / 1
-resto %= 1.0
+n_2 = resto / 2000
+resto %= 2000
 
-m_50 = resto / 0.50
-resto %= 0.50
+n_1 = resto / 1000
+resto %= 1000
 
-m_25 = resto / 0.25
-resto %= 0.25
+m_50 = resto / 500
+resto %= 500
 
-m_10 = resto / 0.10
-resto %= 0.10
+m_25 = resto / 250
+resto %= 250
 
-m_5 = resto / 0.05
-resto %= 0.05
+m_10 = resto / 100
+resto %= 100
 
-resto /= 0.01
+m_5 = resto / 50
+resto %= 50
+
+m_1 = resto / 10
 
 
 puts "NOTAS:"
@@ -49,5 +51,4 @@ puts "#{m_50.to_i} moeda(s) de R$ 0.50"
 puts "#{m_25.to_i} moeda(s) de R$ 0.25"
 puts "#{m_10.to_i} moeda(s) de R$ 0.10"
 puts "#{m_5.to_i} moeda(s) de R$ 0.05"
-puts "#{resto.to_i} moeda(s) de R$ 0.01"
-
+puts "#{m_1.to_i} moeda(s) de R$ 0.01"
