@@ -21,37 +21,24 @@ hora_final = hora_final.to_i
 minuto_final = minuto_final.to_i
 segundo_final = segundo_final.to_i
 
-condicao1 = hora_inicial > hora_final
-condicao2 = minuto_inicial > minuto_final
-condicao3 = segundo_inicial > segundo_final
-condicao4 = dia_inicial == dia_final
-condicao5 = (dia_inicial < dia_final && (hora_final >= hora_inicial || minuto_final >= minuto_inicial))
+dias = dia_final - dia_inicial
+horas = hora_final - hora_inicial
+minutos = minuto_final - minuto_inicial
+segundos = segundo_final - segundo_inicial
 
-dias = (dia_final - dia_inicial) - 1
-horas = hora_inicial - hora_final
-
-if condicao1
-	horas = 24 - (hora_inicial - hora_final)
-end
-
-minutos = (minuto_inicial - minuto_final).abs
-
-if condicao2
-	minutos = 60 - (minuto_inicial - minuto_final).abs
-	horas -= 1
-end
-
-segundos = (segundo_inicial - segundo_final).abs
-
-if condicao3
-	segundos = 60 - (segundo_inicial - segundo_final).abs
+if segundo_final < segundo_inicial
 	minutos -= 1
+	segundos += 60
 end
 
-if condicao4
-	dias += 1
-elsif condicao5
-	dias += 1
+if minuto_final < minuto_inicial
+	horas -= 1
+	minutos += 60
+end
+
+if hora_final < hora_inicial
+	dias -= 1
+	horas += 24
 end
 
 puts "#{dias} dia(s)"
